@@ -6,25 +6,30 @@ using UnityEngine;
 
 public class ClickHandlerScript : MonoBehaviour
 {
-    const float cooldown = 10;
-    float timeToCooldown = 10;
-    string objectName = string.Empty;
+    const float cooldown = 0.5f;
+    float timeToCooldown = 0.5f;
+    GameObject clickedObject;
 
-    // Update is called once per frame
+    public AllyMenuInfo menuInfo;
+
     void FixedUpdate()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
-        if (Input.GetMouseButton(0) && hit.collider != null && (timeToCooldown >= cooldown || hit.collider.gameObject.name != objectName))
+        //Debug.Log(hit.collider);
+        if (Input.GetMouseButton(0) && hit.collider != null && (timeToCooldown >= cooldown || !ReferenceEquals(hit.collider.gameObject, clickedObject)))
         {
             Debug.Log(hit.collider);
-            if (hit.collider.gameObject.TryGetComponent<ISelectable>(out var selectable)) hit.collider.gameObject.GetComponent<ISelectable>().OnClick();
+            if (hit.collider.gameObject.TryGetComponent<ISelectable>(out var selectable)) selectable.OnClick();
 
             timeToCooldown = 0;
 
-            objectName = hit.collider.gameObject.name;
-            
+            clickedObject = hit.collider.gameObject;          
         }
+        //else if (Input.GetMouseButton(0) && hit.collider == null)
+        //{
+        //    menuInfo.gameObject.SetActive(false);
+        //}
         timeToCooldown += Time.deltaTime;
     }
 }

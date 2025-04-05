@@ -6,7 +6,7 @@ using UnityEngine.XR;
 
 public class AllyMenuInfo : MonoBehaviour, ISelectable
 {
-    public AllyPlacementMenuInfo aPMI;
+    public Placement aPMI;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class AllyMenuInfo : MonoBehaviour, ISelectable
 
     public void OnClick()
     {
-        aPMI = GetComponent<AllyPlacementMenuInfo>();
+        aPMI = GetComponent<Placement>();
     }
 
     // Update is called once per frame

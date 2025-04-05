@@ -2,9 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitRegiment : MonoBehaviour
+public class RookieScript : Unit
 {
-    public List<Unit> units = new();
+    
+
+    public override void Attack(int damage)
+    {
+        
+    }
+
+    public override void OnDeath()
+    {
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -12,7 +23,7 @@ public class UnitRegiment : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         
     }

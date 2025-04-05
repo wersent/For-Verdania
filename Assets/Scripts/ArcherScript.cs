@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitRegiment : MonoBehaviour
+public class ArcherScript : MonoBehaviour
 {
-    public List<Unit> units = new();
     // Start is called before the first frame update
     void Start()
     {
@@ -12,7 +11,7 @@ public class UnitRegiment : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         
     }

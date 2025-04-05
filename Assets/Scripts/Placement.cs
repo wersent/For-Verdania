@@ -6,13 +6,21 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static Unity.Burst.Intrinsics.X86.Avx;
 
-public class AllyPlacementMenuInfo : MonoBehaviour
+public class Placement : MonoBehaviour
 {
     public AllyMenuInfo menuInfo;
 
     void Start()
     {
-
+        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.name == "Canvas" && !obj.activeInHierarchy)
+            {
+                menuInfo = obj.GetComponent<AllyMenuInfo>();
+                break;
+            }
+        }
     }
 
     public void OnMouseDown()
@@ -24,6 +32,5 @@ public class AllyPlacementMenuInfo : MonoBehaviour
     void FixedUpdate()
     {
 
-        //RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
     }
 }

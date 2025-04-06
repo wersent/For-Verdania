@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class RookieScript : Unit
 {
-    
+    private void Awake()
+    {
+        isEnable = true;
+    }
 
     public override void Attack(int damage)
     {

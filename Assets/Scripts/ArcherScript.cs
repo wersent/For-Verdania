@@ -2,9 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcherScript : MonoBehaviour
+public class ArcherScript : Unit
 {
-    // Start is called before the first frame update
+
+
+    void Awake()
+    {
+        isEnable = true;
+    }
+
+    public override void Attack(int damage)
+    {
+        
+    }
+
+    public override void OnDeath()
+    {
+        
+    }
+
     void Start()
     {
         

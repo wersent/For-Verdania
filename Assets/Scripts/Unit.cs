@@ -15,6 +15,7 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected int currentHp;
     [SerializeField] protected int currentDmg;
     [SerializeField] protected int currentAmount;
+    [SerializeField] protected bool isEnable = false;
 
     public virtual int Hp { get => currentHp; set 
         {

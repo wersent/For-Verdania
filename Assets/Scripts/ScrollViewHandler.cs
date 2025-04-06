@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public class ScrollViewHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    void Awake()
+    {
+        
+    }
+
     void Start()
     {
         gameObject.SetActive(false);

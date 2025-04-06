@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TestUI : MonoBehaviour
 {
-    public Unit unit;
+    public UnitRegiment unit;
     public TextMeshProUGUI tmp;
 
     // Start is called before the first frame update

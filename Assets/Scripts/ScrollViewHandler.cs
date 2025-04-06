@@ -20,5 +20,6 @@ public class ScrollViewHandler : MonoBehaviour
     public void ButtonClicked()
     {
         gameObject.SetActive(true);
+
     }
 }

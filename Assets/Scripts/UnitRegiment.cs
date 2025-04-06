@@ -2,10 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitRegiment : MonoBehaviour
+public class UnitRegiment : Unit
 {
     public List<Unit> units = new();
-    // Start is called before the first frame update
+
+    public override void Attack(int damage)
+    {
+        
+    }
+
+    public override void OnDeath()
+    {
+        
+    }
+
     void Start()
     {
         

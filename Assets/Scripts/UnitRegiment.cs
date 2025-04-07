@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class UnitRegiment : Unit
 {
-    public List<Unit> units = new();
 
     public override void Attack(int damage)
     {

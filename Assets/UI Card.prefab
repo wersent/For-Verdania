@@ -59,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.4056604, g: 0.16264686, b: 0.16264686, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 6965829848745487420}
   - component: {fileID: 1769398912427474257}
   - component: {fileID: -5295238647305890862}
+  - component: {fileID: 5962248499861370618}
   m_Layer: 0
   m_Name: UI Card
   m_TagString: Untagged
@@ -358,3 +359,16 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 6965829848745487420}
   _textMeshProUGUI: {fileID: 5675371121082868208}
   _image: {fileID: 1928091789691685655}
+--- !u!114 &5962248499861370618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294914654027315073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []

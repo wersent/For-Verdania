@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UICardController : MonoBehaviour
+public class UICardController : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private GameObject _gameObject;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private TextMeshProUGUI _textMeshProUGUI;
-    [SerializeField] private Image _image;
+    [SerializeField] protected Unit unit;
+    [SerializeField] protected SpriteRenderer _spriteRenderer;
+    [SerializeField] protected TextMeshProUGUI _textMeshProUGUI;
+    [SerializeField] protected Image _image;
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+
+    }
 
     void Awake()
     {
-        
+        _image = unit.GetIcon();
+        _textMeshProUGUI = unit.GetDescription();
+
     }
 
     void Start()

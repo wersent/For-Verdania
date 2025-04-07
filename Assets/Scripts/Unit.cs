@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Unit : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected int unitHp;
     [SerializeField] protected int dmg;
     [SerializeField] protected int amount;
+    [SerializeField] protected TextMeshProUGUI description;
+    [SerializeField] protected Image icon;
 
     [SerializeField] protected int currentHp;
     [SerializeField] protected int currentDmg;
@@ -25,14 +29,20 @@ public abstract class Unit : MonoBehaviour
     }
     public virtual int Dmg { get => currentDmg; set => currentDmg = dmg; }
     public virtual int Amount { get => currentAmount; set => currentAmount = amount; }
+    //public virtual TextMeshProUGUI Description
+    //{
+    //    get => description; 
+    //}
 
     void Start()
     {
         //del += (int penis) => Debug.Log(penis);
-        //del += Atack;
+        //del += Attack;
 
         //del(currentHp);
     }
+    public Image GetIcon() { return icon; }
+    public TextMeshProUGUI GetDescription() { return description; }
     public abstract void Attack(int damage);
     public abstract void OnDeath();
 }

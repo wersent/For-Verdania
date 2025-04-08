@@ -7,14 +7,14 @@ using UnityEngine.UI;
 
 public class UICardController : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] protected Unit unit;
-    [SerializeField] protected SpriteRenderer _spriteRenderer;
-    [SerializeField] protected TextMeshProUGUI _textMeshProUGUI;
-    [SerializeField] protected Image _image;
+    public Unit unit;
+    public SpriteRenderer _spriteRenderer;
+    public TextMeshProUGUI _textMeshProUGUI;
+    public Image _image;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-
+        Debug.Log($"Add {unit.name}");
     }
 
     void Awake()
@@ -26,12 +26,12 @@ public class UICardController : MonoBehaviour, IPointerClickHandler
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

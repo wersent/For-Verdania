@@ -29,10 +29,6 @@ public abstract class Unit : MonoBehaviour
     }
     public virtual int Dmg { get => currentDmg; set => currentDmg = dmg; }
     public virtual int Amount { get => currentAmount; set => currentAmount = amount; }
-    //public virtual TextMeshProUGUI Description
-    //{
-    //    get => description; 
-    //}
 
     void Start()
     {

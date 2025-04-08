@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     //[SerializeField] private ArcherScript _archer;
     //[SerializeField] private RookieScript _rookie;
-    [SerializeField] private List<Unit> units = new();
+    public List<Unit> units = new();
 
     private void Awake()
     {

@@ -11,6 +11,17 @@ public class ScrollViewHandler : MonoBehaviour
 
     void Awake()
     {
+        //foreach (var unit in _gameManager.units)
+        //{
+        //    var unitCard = Instantiate(_cardController, _transform);
+        //    UICardController uICardController = unitCard.GetComponent<UICardController>();
+
+        //    uICardController.unit = unit;
+        //}
+    }
+
+    void Start()
+    {
         foreach (var unit in _gameManager.units)
         {
             var unitCard = Instantiate(_cardController, _transform);
@@ -18,10 +29,6 @@ public class ScrollViewHandler : MonoBehaviour
 
             uICardController.unit = unit;
         }
-    }
-
-    void Start()
-    {
         gameObject.SetActive(false);
     }
 

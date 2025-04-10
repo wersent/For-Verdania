@@ -8,16 +8,16 @@ using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class Placement : MonoBehaviour
 {
-    public AllyMenuInfo menuInfo;
+    public AllyMenuInfo _allyMenuInfo;
 
     void Start()
     {
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
         foreach (GameObject obj in allObjects)
         {
-            if (obj.name == "Canvas" && !obj.activeInHierarchy)
+            if (obj.name == "Menu Info" && !obj.activeInHierarchy)
             {
-                menuInfo = obj.GetComponent<AllyMenuInfo>();
+                _allyMenuInfo = obj.GetComponent<AllyMenuInfo>();
                 break;
             }
         }
@@ -25,8 +25,8 @@ public class Placement : MonoBehaviour
 
     public void OnMouseDown()
     {
-        menuInfo.gameObject.SetActive(true);
-        if (menuInfo.gameObject.TryGetComponent<ISelectable>(out var selectable)) { selectable.OnClick(); menuInfo.aPMI = this; }
+        _allyMenuInfo.gameObject.SetActive(true);
+        if (_allyMenuInfo.gameObject.TryGetComponent<ISelectable>(out var selectable)) { selectable.OnClick(); _allyMenuInfo.aPMI = this; }
     }
 
     void FixedUpdate()

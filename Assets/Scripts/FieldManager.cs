@@ -30,7 +30,7 @@ public class FieldManager : MonoBehaviour
                 Vector3 position = new(posX, posY, 0);
 
                 var spawnedPlacement = Instantiate(_placementPrefab, position, Quaternion.identity);
-                spawnedPlacement.menuInfo = GetComponent<AllyMenuInfo>();
+                spawnedPlacement._allyMenuInfo = GetComponent<AllyMenuInfo>();
                 spawnedPlacement.name = $"Placement {x} {y}";
 
                 // Важно: убираем scale из спавненного объекта, если он уже учтён в префабе

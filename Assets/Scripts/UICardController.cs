@@ -1,25 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
-public class UICardController : MonoBehaviour
+public class UICardController : MonoBehaviour, ISelectable
 {
-    public Unit unit;
-    public SpriteRenderer _spriteRenderer;
-    public TextMeshProUGUI _textMeshProUGUI;
-    public Image _image;
+    [SerializeField] private Unit unit;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private TextMeshProUGUI _textMeshProUGUI;
+    [SerializeField] private Image _image;
+    [SerializeField] private UnitRegiment _unitRegiment;
+    [SerializeField] private AllyMenuInfo _allyMenuInfo;
 
-    void Awake()
+    public void OnClick()
     {
-
-    }
-
-    void Start()
-    {
-
+        
     }
 
     public void Initialize(Unit unitData)
@@ -28,15 +28,19 @@ public class UICardController : MonoBehaviour
         _image.sprite = unit.GetIcon();
         _textMeshProUGUI.text = unit.Description;
         _textMeshProUGUI.fontSize = 18;
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        // Другие настройки
+        _spriteRenderer.color = Color.white;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Start()
     {
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-
-
+        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.name == "Menu Info")
+            {
+                _allyMenuInfo = obj.GetComponent<AllyMenuInfo>();
+                break;
+            }
+        }
     }
 }

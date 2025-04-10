@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ArcherScript : Unit
 {
-
+    public override string Description { get => description; set => description = value; }
 
     void Awake()
     {
         isEnable = true;
+        Description = "chilly guy with bow \n CHICKEN JOCKEY";
     }
 
     public override void Attack(int damage)

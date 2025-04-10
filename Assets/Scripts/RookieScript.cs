@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class RookieScript : Unit
 {
-    
+    public override string Description { get => description; set => description = value; }
 
     private void Awake()
     {
         isEnable = true;
+        Description = "chily guy with sword and shield \n FLINT AND STEEL";
+        //description.text = "huy";
     }
 
     public override void Attack(int damage)

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     {
         units.Clear();
         foreach (var unitType in gameObject.GetComponentsInChildren<Unit>())
-        {
+        {           
             units.Add(unitType);
         }
         foreach (var unit in units)

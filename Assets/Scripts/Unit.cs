@@ -13,8 +13,8 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected int unitHp;
     [SerializeField] protected int dmg;
     [SerializeField] protected int amount;
-    [SerializeField] protected TextMeshProUGUI description;
-    [SerializeField] protected Image icon;
+    [SerializeField] protected string description;
+    [SerializeField] protected Sprite icon;
 
     [SerializeField] protected int currentHp;
     [SerializeField] protected int currentDmg;
@@ -29,6 +29,7 @@ public abstract class Unit : MonoBehaviour
     }
     public virtual int Dmg { get => currentDmg; set => currentDmg = dmg; }
     public virtual int Amount { get => currentAmount; set => currentAmount = amount; }
+    public virtual string Description { get => description; set => description = "huy"; }
 
     void Start()
     {
@@ -37,8 +38,8 @@ public abstract class Unit : MonoBehaviour
 
         //del(currentHp);
     }
-    public Image GetIcon() { return icon; }
-    public TextMeshProUGUI GetDescription() { return description; }
+    public Sprite GetIcon() { return icon; }
+    //public string GetDescription() { return description; }
     public abstract void Attack(int damage);
     public abstract void OnDeath();
 }

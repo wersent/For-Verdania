@@ -7,7 +7,7 @@ public class ScrollViewHandler : MonoBehaviour
 {
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private UICardController _cardController;
-    [SerializeField] private Transform _transform;
+    [SerializeField] private RectTransform _transform;
 
     void Awake()
     {
@@ -22,12 +22,13 @@ public class ScrollViewHandler : MonoBehaviour
 
     void Start()
     {
+        _transform.sizeDelta = new Vector2(_transform.sizeDelta.x, _transform.sizeDelta.y * _gameManager.units.Count);
         foreach (var unit in _gameManager.units)
         {
             var unitCard = Instantiate(_cardController, _transform);
             UICardController uICardController = unitCard.GetComponent<UICardController>();
 
-            uICardController.unit = unit;
+            uICardController.Initialize(unit);
         }
         gameObject.SetActive(false);
     }

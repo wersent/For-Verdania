@@ -12,7 +12,7 @@ public class TestUI : MonoBehaviour
     void Start()
     {
         tmp = GetComponent<TextMeshProUGUI>();
-        unit.OnHpChangedEvent += UpdateHp;
+        //unit.OnHpChangedEvent += UpdateHp;
     }
 
     public void UpdateHp(int hp)

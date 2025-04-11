@@ -19,7 +19,20 @@ public class UICardController : MonoBehaviour, ISelectable
 
     public void OnClick()
     {
-        
+        var placementManage = _allyMenuInfo.placementPrefub;
+        if (placementManage._unitRegiment == null)
+        {
+            var newUnitRegiment = Instantiate(_unitRegiment, placementManage.transform);
+            placementManage._unitRegiment = newUnitRegiment.GetComponent<UnitRegiment>();
+            newUnitRegiment.name = $"Contains: {unit.name}";
+            newUnitRegiment.unitsTypes.Add(unit);
+            Debug.Log(newUnitRegiment.transform);
+        }
+        else if (placementManage._unitRegiment != null)
+        {
+            placementManage._unitRegiment.unitsTypes.Add(unit);
+            placementManage._unitRegiment.name += $" {unit.name}";
+        }
     }
 
     public void Initialize(Unit unitData)

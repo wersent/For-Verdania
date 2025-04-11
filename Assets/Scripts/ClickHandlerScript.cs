@@ -19,7 +19,7 @@ public class ClickHandlerScript : MonoBehaviour
         //Debug.Log(hit.collider);
         if (Input.GetMouseButton(0) && hit.collider != null && (timeToCooldown >= cooldown || !ReferenceEquals(hit.collider.gameObject, clickedObject)))
         {
-            //Debug.Log(hit.collider);
+            Debug.Log(hit.collider);
             if (hit.collider.gameObject.TryGetComponent<ISelectable>(out var selectable)) selectable.OnClick();
 
             timeToCooldown = 0;

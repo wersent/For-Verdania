@@ -10,8 +10,7 @@ public class RookieScript : Unit
     private void Awake()
     {
         isEnable = true;
-        Description = "chily guy with sword and shield \n FLINT AND STEEL";
-        //description.text = "huy";
+        Description = "chilly guy with sword and shield \n FLINT AND STEEL";
     }
 
     public override void Attack(int damage)

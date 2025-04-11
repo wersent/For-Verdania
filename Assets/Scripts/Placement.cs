@@ -9,6 +9,7 @@ using static Unity.Burst.Intrinsics.X86.Avx;
 public class Placement : MonoBehaviour
 {
     public AllyMenuInfo _allyMenuInfo;
+    public UnitRegiment _unitRegiment;
 
     void Start()
     {

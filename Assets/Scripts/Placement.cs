@@ -26,7 +26,7 @@ public class Placement : MonoBehaviour
     public void OnMouseDown()
     {
         _allyMenuInfo.gameObject.SetActive(true);
-        if (_allyMenuInfo.gameObject.TryGetComponent<ISelectable>(out var selectable)) { selectable.OnClick(); _allyMenuInfo.aPMI = this; }
+        if (_allyMenuInfo.gameObject.TryGetComponent<ISelectable>(out var selectable)) { selectable.OnClick(); _allyMenuInfo.placementPrefub = this; }
     }
 
     void FixedUpdate()

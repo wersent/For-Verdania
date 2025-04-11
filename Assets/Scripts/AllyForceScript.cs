@@ -59,7 +59,7 @@ public class AllyForceScript : MonoBehaviour
         spriteRenderer.enabled = true;
 
         // Получаем ссылку на объект один раз
-        GameObject selectedObject = menuInfo.aPMI.gameObject;
+        GameObject selectedObject = menuInfo.placementPrefub.gameObject;
         Vector3 targetPosition = selectedObject.transform.position;
 
         // Устанавливаем позицию

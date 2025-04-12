@@ -8,30 +8,32 @@ using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.XR;
 
-public class UICardController : MonoBehaviour, ISelectable
+public class UICardController : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Unit unit;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private TextMeshProUGUI _textMeshProUGUI;
     [SerializeField] private Image _image;
     [SerializeField] private UnitRegiment _unitRegiment;
     [SerializeField] private AllyMenuInfo _allyMenuInfo;
 
-    public void OnClick()
+    public void OnPointerClick(PointerEventData pointerEventData)
     {
         var placementManage = _allyMenuInfo.placementPrefub;
         if (placementManage._unitRegiment == null)
         {
             var newUnitRegiment = Instantiate(_unitRegiment, placementManage.transform);
             placementManage._unitRegiment = newUnitRegiment.GetComponent<UnitRegiment>();
-            newUnitRegiment.name = $"Contains: {unit.name}";
+            newUnitRegiment.name = $"Contains: {unit}";
             newUnitRegiment.unitsTypes.Add(unit);
-            Debug.Log(newUnitRegiment.transform);
+            Debug.Log(newUnitRegiment.name);
+            Debug.Log(placementManage.name);
         }
         else if (placementManage._unitRegiment != null)
         {
             placementManage._unitRegiment.unitsTypes.Add(unit);
-            placementManage._unitRegiment.name += $" {unit.name}";
+            placementManage._unitRegiment.name += $" {unit}";
+            Debug.Log(placementManage._unitRegiment.name);
+            Debug.Log(placementManage.name);
         }
     }
 
@@ -41,7 +43,6 @@ public class UICardController : MonoBehaviour, ISelectable
         _image.sprite = unit.GetIcon();
         _textMeshProUGUI.text = unit.Description;
         _textMeshProUGUI.fontSize = 18;
-        _spriteRenderer.color = Color.white;
     }
 
     void Start()

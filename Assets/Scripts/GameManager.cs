@@ -16,9 +16,9 @@ public class GameManager : MonoBehaviour
         {           
             units.Add(unitType);
         }
-        foreach (var unit in units)
-        {
-            Debug.Log(unit);
-        }
+        //foreach (var unit in units)
+        //{
+        //    Debug.Log(unit);
+        //}
     }
 }

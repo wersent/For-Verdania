@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR;
 
 public class AllyMenuInfo : MonoBehaviour, ISelectable
@@ -22,5 +24,18 @@ public class AllyMenuInfo : MonoBehaviour, ISelectable
     void FixedUpdate()
     {
 
+    }
+
+    public void SetParentAndChildrenDisable()
+    {
+        Transform parent = transform;
+        Button[] buttons = parent.GetComponents<Button>();
+        Image[] images = parent.GetComponents<Image>();
+        // Деактивируем всех потомков, когда родитель деактивируется
+        foreach (Transform child in transform)
+        {
+            if (child.gameObject.GetComponent<Button>() == null && child.gameObject.GetComponent<Image>() == null) child.gameObject.SetActive(false);
+        }
+        gameObject.SetActive(false);
     }
 }

@@ -1,10 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class ClickHandlerScript : MonoBehaviour
 {
@@ -12,76 +8,79 @@ public class ClickHandlerScript : MonoBehaviour
     float timeToCooldown = 0.5f;
     GameObject clickedObject;
 
-    void Update()
+    public AllyMenuInfo menuInfo;
+
+    void FixedUpdate()
     {
-        // Получаем ВСЕ объекты под курсором (UI + 2D)
-        var (hasUI, has2D) = GetObjectsUnderPointer();
-
-        // Если есть хотя бы один UI элемент - игнорируем ВСЁ
-        if (hasUI)
+        if (IsPointerOverUI())
         {
-            return;
+            HandleUIClick();
         }
-
-        // Обрабатываем только "чистые" 2D клики (без UI под курсором)
-        if (Input.GetMouseButton(0) && has2D != null &&
-            (timeToCooldown >= cooldown || !ReferenceEquals(has2D, clickedObject)))
+        else
         {
-            ProcessClick(has2D);
+            HandleWorldClick();
         }
 
         timeToCooldown += Time.deltaTime;
     }
 
-    // Возвращает (есть ли UI, первый 2D объект)
-    private (bool, GameObject) GetObjectsUnderPointer()
+    private bool IsPointerOverUI()
     {
-        bool hasUI = false;
-        GameObject first2DObject = null;
+        // Проверка, находится ли указатель над UI-элементом
+        return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
+    }
 
-        // 1. Проверяем UI элементы
-        if (EventSystem.current != null)
+    private void HandleUIClick()
+    {
+        if (Input.GetMouseButton(0) && timeToCooldown >= cooldown)
         {
-            PointerEventData eventData = new PointerEventData(EventSystem.current);
-            eventData.position = Input.mousePosition;
+            // Получаем текущий UI-объект под указателем
+            PointerEventData pointerData = new PointerEventData(EventSystem.current);
+            pointerData.position = Input.mousePosition;
 
             List<RaycastResult> results = new List<RaycastResult>();
-            EventSystem.current.RaycastAll(eventData, results);
+            EventSystem.current.RaycastAll(pointerData, results);
 
-            foreach (var result in results)
+            // Берём первый элемент (он находится "сверху")
+            if (results.Count > 0)
             {
-                if (result.gameObject.GetComponent<Graphic>()?.raycastTarget == true)
+                var topUIElement = results[0].gameObject;
+
+                if (topUIElement.TryGetComponent<ISelectable>(out var selectable))
                 {
-                    hasUI = true;
-                    break;
+                    selectable.OnClick();
+                    clickedObject = topUIElement;
+                    timeToCooldown = 0;
+                }
+            }
+        }
+    }
+
+    private void HandleWorldClick()
+    {
+        // Выполняем Raycast для физических объектов
+        RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+        if (Input.GetMouseButton(0) && hits.Length > 0 && timeToCooldown >= cooldown)
+        {
+            // Сортируем объекты по z-координате (ближайший к камере — "сверху")
+            System.Array.Sort(hits, (a, b) => a.collider.transform.position.z.CompareTo(b.collider.transform.position.z));
+
+            foreach (var hit in hits)
+            {
+                if (hit.collider.gameObject.TryGetComponent<ISelectable>(out var selectable))
+                {
+                    selectable.OnClick();
+                    clickedObject = hit.collider.gameObject;
+                    timeToCooldown = 0;
+                    break; // Обрабатываем только первый (верхний) объект
                 }
             }
         }
 
-        // 2. Проверяем 2D объекты только если нет UI
-        if (!hasUI)
+        else if (Input.GetMouseButton(0) && hits.Length == 0)
         {
-            RaycastHit2D hit = Physics2D.Raycast(
-                Camera.main.ScreenToWorldPoint(Input.mousePosition),
-                Vector2.zero
-            );
-
-            if (hit.collider != null)
-            {
-                first2DObject = hit.collider.gameObject;
-            }
-        }
-
-        return (hasUI, first2DObject);
-    }
-
-    private void ProcessClick(GameObject target)
-    {
-        if (target.TryGetComponent<ISelectable>(out var selectable))
-        {
-            selectable.OnClick();
-            timeToCooldown = 0;
-            clickedObject = target;
+            menuInfo.SetParentAndChildrenDisable();
         }
     }
 }

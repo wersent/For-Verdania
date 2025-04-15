@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static Unity.Burst.Intrinsics.X86.Avx;
 
-public class Placement : MonoBehaviour
+public class Placement : MonoBehaviour, ISelectable
 {
     public AllyMenuInfo _allyMenuInfo;
     public UnitRegiment _unitRegiment;
@@ -24,7 +24,7 @@ public class Placement : MonoBehaviour
         }
     }
 
-    public void OnMouseDown()
+    public void OnClick()
     {
         _allyMenuInfo.gameObject.SetActive(true);
         if (_allyMenuInfo.gameObject.TryGetComponent<ISelectable>(out var selectable)) { selectable.OnClick(); _allyMenuInfo.placementPrefub = this; }

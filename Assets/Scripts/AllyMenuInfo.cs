@@ -28,13 +28,10 @@ public class AllyMenuInfo : MonoBehaviour, ISelectable
 
     public void SetParentAndChildrenDisable()
     {
-        Transform parent = transform;
-        Button[] buttons = parent.GetComponents<Button>();
-        Image[] images = parent.GetComponents<Image>();
         // Деактивируем всех потомков, когда родитель деактивируется
         foreach (Transform child in transform)
         {
-            if (child.gameObject.GetComponent<Button>() == null && child.gameObject.GetComponent<Image>() == null) child.gameObject.SetActive(false);
+            if (child.gameObject.TryGetComponent<IButtonClicked>(out var buttonClicked)) child.gameObject.SetActive(false);
         }
         gameObject.SetActive(false);
     }

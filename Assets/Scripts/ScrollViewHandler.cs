@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScrollViewHandler : MonoBehaviour
+public class ScrollViewHandler : MonoBehaviour, IButtonClicked
 {
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private UICardController _cardController;
@@ -42,6 +42,5 @@ public class ScrollViewHandler : MonoBehaviour
     public void ButtonClicked()
     {
         gameObject.SetActive(true);
-
     }
 }

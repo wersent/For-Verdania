@@ -22,7 +22,9 @@ public class UICardController : MonoBehaviour, IPointerClickHandler
         if (placementManage._unitRegiment == null)
         {
             var newUnitRegiment = Instantiate(_unitRegiment, placementManage.transform);
-            placementManage._unitRegiment = newUnitRegiment.GetComponent<UnitRegiment>();
+            newUnitRegiment.Initialize(ref placementManage);
+            //newUnitRegiment.transform.position = placementManage.transform.position;
+            //placementManage._unitRegiment = newUnitRegiment.GetComponent<UnitRegiment>();
             newUnitRegiment.name = $"Contains: {unit}";
             newUnitRegiment.unitsTypes.Add(unit);
             Debug.Log(newUnitRegiment.name);

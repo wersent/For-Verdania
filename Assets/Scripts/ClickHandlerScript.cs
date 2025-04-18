@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class ClickHandlerScript : MonoBehaviour
 {
@@ -35,8 +37,10 @@ public class ClickHandlerScript : MonoBehaviour
         if (Input.GetMouseButton(0) && timeToCooldown >= cooldown)
         {
             // Получаем текущий UI-объект под указателем
-            PointerEventData pointerData = new PointerEventData(EventSystem.current);
-            pointerData.position = Input.mousePosition;
+            PointerEventData pointerData = new(EventSystem.current)
+            {
+                position = Input.mousePosition
+            };
 
             List<RaycastResult> results = new List<RaycastResult>();
             EventSystem.current.RaycastAll(pointerData, results);
@@ -61,7 +65,7 @@ public class ClickHandlerScript : MonoBehaviour
         // Выполняем Raycast для физических объектов
         RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
-        if (Input.GetMouseButton(0) && hits.Length > 0 && timeToCooldown >= cooldown)
+        if (Input.GetMouseButtonDown(0) && hits.Length > 0 && timeToCooldown >= cooldown)
         {
             // Сортируем объекты по z-координате (ближайший к камере — "сверху")
             System.Array.Sort(hits, (a, b) => a.collider.transform.position.z.CompareTo(b.collider.transform.position.z));

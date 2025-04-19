@@ -24,6 +24,12 @@ public class Placement : MonoBehaviour, ISelectable
         }
     }
 
+    public void SwitchPosition(Placement placement)
+    {
+        placement._unitRegiment = _unitRegiment;
+        _unitRegiment = null;
+    }
+
     public void OnClick()
     {
         _allyMenuInfo.gameObject.SetActive(true);

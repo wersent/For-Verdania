@@ -21,12 +21,12 @@ public class UICardController : MonoBehaviour, IPointerClickHandler
         var placementManage = _allyMenuInfo.placementPrefub;
         if (placementManage._unitRegiment == null)
         {
-            var newUnitRegiment = Instantiate(_unitRegiment, placementManage.transform);
-            newUnitRegiment.Initialize(ref placementManage);
-            //newUnitRegiment.transform.position = placementManage.transform.position;
-            //placementManage._unitRegiment = newUnitRegiment.GetComponent<UnitRegiment>();
+            var newUnitRegiment = Instantiate<UnitRegiment>(_unitRegiment, placementManage.transform);
+
+            newUnitRegiment.Initialize(placementManage);
             newUnitRegiment.name = $"Contains: {unit}";
             newUnitRegiment.unitsTypes.Add(unit);
+
             Debug.Log(newUnitRegiment.name);
             Debug.Log(placementManage.name);
         }
@@ -34,6 +34,7 @@ public class UICardController : MonoBehaviour, IPointerClickHandler
         {
             placementManage._unitRegiment.unitsTypes.Add(unit);
             placementManage._unitRegiment.name += $" {unit}";
+
             Debug.Log(placementManage._unitRegiment.name);
             Debug.Log(placementManage.name);
         }

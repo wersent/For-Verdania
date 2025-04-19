@@ -12,7 +12,7 @@ public class ClickHandlerScript : MonoBehaviour
 
     public AllyMenuInfo menuInfo;
 
-    void FixedUpdate()
+    void Update()
     {
         if (IsPointerOverUI())
         {
@@ -42,7 +42,7 @@ public class ClickHandlerScript : MonoBehaviour
                 position = Input.mousePosition
             };
 
-            List<RaycastResult> results = new List<RaycastResult>();
+            List<RaycastResult> results = new();
             EventSystem.current.RaycastAll(pointerData, results);
 
             // Берём первый элемент (он находится "сверху")

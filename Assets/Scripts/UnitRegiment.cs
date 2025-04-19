@@ -1,11 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitRegiment : Unit
 {
-    public delegate void OnPositionChange(ref Placement placement);
-    OnPositionChange positionChange;
+    public event Action<Placement> PositionChanged = delegate { };
 
     public List<Unit> unitsTypes = new(2);
     [SerializeField] private Color color;
@@ -21,23 +21,19 @@ public class UnitRegiment : Unit
         
     }
 
-    public void Initialize(ref Placement placement)
+    public void Initialize(Placement placement)
     {
         gameObject.transform.position = placement.transform.position;
         placement._unitRegiment = this;
         _placement = placement;
     }
 
-    private void OnChangePosition(ref Placement placement)
-    {
-        placement._unitRegiment = null;
-
-    }
-
     void Start()
     {
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         color = gameObject.GetComponent<SpriteRenderer>().color;
+        PositionChanged += _placement.SwitchPosition;
+        PositionChanged += (Placement placement) => _placement = placement;
     }
 
     private void OnMouseDrag()
@@ -62,10 +58,17 @@ public class UnitRegiment : Unit
         // Делаем рейкаст с явным указанием параметров
         RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero, Mathf.Infinity);
 
-        if (hit.collider.TryGetComponent<Transform>(out var transfr))
+        if (hit.collider != null && hit.collider.TryGetComponent(out Placement placement) && placement != _placement)
         {
-            transform.position = transfr.position;
-            Debug.Log($"Object moved to: {transform.position}");
+            PositionChanged(placement);
+
+            if (hit.collider.TryGetComponent<Transform>(out var transfr))
+            {
+                gameObject.transform.SetParent(placement.transform);
+                transform.position = transfr.position;
+
+                Debug.Log($"Object moved to: {transform.position}");
+            }
         }
     }
 

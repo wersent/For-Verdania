@@ -72,6 +72,18 @@ public class UnitRegiment : Unit
         }
     }
 
+    public void OnUnitsCompositionChange(Unit unit)
+    {
+        if (unitsTypes.Count <= 2)
+        {
+            unitsTypes.Add(unit);
+        }
+        else
+        {
+
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {

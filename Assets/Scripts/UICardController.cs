@@ -15,6 +15,7 @@ public class UICardController : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Image _image;
     [SerializeField] private UnitRegiment _unitRegiment;
     [SerializeField] private AllyMenuInfo _allyMenuInfo;
+    public Outline _outline;
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
@@ -34,6 +35,10 @@ public class UICardController : MonoBehaviour, IPointerClickHandler
         {
             placementManage._unitRegiment.unitsTypes.Add(unit);
             placementManage._unitRegiment.name += $" {unit}";
+            _outline = gameObject.AddComponent<Outline>();
+            _outline.effectColor = Color.red;
+            
+            _allyMenuInfo.SetTitleName(placementManage._unitRegiment.unitsTypes.Count.ToString());
 
             Debug.Log(placementManage._unitRegiment.name);
             Debug.Log(placementManage.name);

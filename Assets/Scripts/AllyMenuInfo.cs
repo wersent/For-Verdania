@@ -9,6 +9,7 @@ using UnityEngine.XR;
 public class AllyMenuInfo : MonoBehaviour, ISelectable
 {
     public Placement placementPrefub;
+    [SerializeField] private TextMeshProUGUI _textMeshProUGUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,11 @@ public class AllyMenuInfo : MonoBehaviour, ISelectable
     void FixedUpdate()
     {
 
+    }
+
+    public void SetTitleName(string title)
+    {
+        _textMeshProUGUI.text = title;
     }
 
     public void SetParentAndChildrenDisable()

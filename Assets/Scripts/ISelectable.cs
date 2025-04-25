@@ -5,5 +5,5 @@ using UnityEngine;
 
 public interface ISelectable
 {
-    void OnClick();
+    void OnClick(GameObject gameObject);
 }

@@ -52,7 +52,7 @@ public class ClickHandlerScript : MonoBehaviour
 
                 if (topUIElement.TryGetComponent<ISelectable>(out var selectable))
                 {
-                    selectable.OnClick();
+                    selectable.OnClick(topUIElement);
                     clickedObject = topUIElement;
                     timeToCooldown = 0;
                 }
@@ -74,7 +74,7 @@ public class ClickHandlerScript : MonoBehaviour
             {
                 if (hit.collider.gameObject.TryGetComponent<ISelectable>(out var selectable))
                 {
-                    selectable.OnClick();
+                    selectable.OnClick(hit.collider.gameObject);
                     clickedObject = hit.collider.gameObject;
                     timeToCooldown = 0;
                     break; // Обрабатываем только первый (верхний) объект

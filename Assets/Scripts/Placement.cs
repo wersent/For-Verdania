@@ -30,10 +30,13 @@ public class Placement : MonoBehaviour, ISelectable
         _unitRegiment = null;
     }
 
-    public void OnClick()
+    public void OnClick(GameObject gameObject)
     {
         _allyMenuInfo.gameObject.SetActive(true);
-        if (_allyMenuInfo.gameObject.TryGetComponent<ISelectable>(out var selectable)) { selectable.OnClick(); _allyMenuInfo.placementPrefub = this; }
+        if (_allyMenuInfo.gameObject.TryGetComponent<ISelectable>(out var selectable)) 
+        { 
+            selectable.OnClick(this.gameObject);  
+        }
     }
 
     void FixedUpdate()

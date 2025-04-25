@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //[SerializeField] private ArcherScript _archer;
-    //[SerializeField] private RookieScript _rookie;
+    [SerializeField] private ScrollViewHandler _scrollViewHandler;
+    [SerializeField] private AllyMenuInfo _allyMenuInfo;
     public List<Unit> units = new();
 
     private void Awake()
@@ -16,9 +16,9 @@ public class GameManager : MonoBehaviour
         {           
             units.Add(unitType);
         }
-        //foreach (var unit in units)
-        //{
-        //    Debug.Log(unit);
-        //}
+
+        var unitsSrollView = Instantiate(_scrollViewHandler, _allyMenuInfo.transform);
+        ScrollViewHandler scrollViewHandler = unitsSrollView.GetComponent<ScrollViewHandler>();
+        scrollViewHandler.Initialize(this.gameObject);
     }
 }

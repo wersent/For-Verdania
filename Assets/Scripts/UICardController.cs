@@ -19,7 +19,7 @@ public class UICardController : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        var placementManage = _allyMenuInfo.placementPrefub;
+        var placementManage = _allyMenuInfo._placement;
         if (placementManage._unitRegiment == null)
         {
             var newUnitRegiment = Instantiate<UnitRegiment>(_unitRegiment, placementManage.transform);

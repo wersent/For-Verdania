@@ -7,25 +7,14 @@ public class ScrollViewHandler : MonoBehaviour, IButtonClicked
 {
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private UICardController _cardController;
-    [SerializeField] private RectTransform _transform;
-
-    void Awake()
-    {
-        //foreach (var unit in _gameManager.units)
-        //{
-        //    var unitCard = Instantiate(_cardController, _transform);
-        //    UICardController uICardController = unitCard.GetComponent<UICardController>();
-
-        //    uICardController.unit = unit;
-        //}
-    }
+    [SerializeField] private RectTransform _contentTransform;
 
     void Start()
     {
-        _transform.sizeDelta = new Vector2(_transform.sizeDelta.x, _transform.sizeDelta.y * _gameManager.units.Count);
+        _contentTransform.sizeDelta = new Vector2(_contentTransform.sizeDelta.x, _contentTransform.sizeDelta.y * _gameManager.units.Count);
         foreach (var unit in _gameManager.units)
         {
-            var unitCard = Instantiate(_cardController, _transform.transform);
+            var unitCard = Instantiate(_cardController, _contentTransform.transform);
             UICardController uICardController = unitCard.GetComponent<UICardController>();
 
             uICardController.Initialize(unit);
@@ -33,10 +22,9 @@ public class ScrollViewHandler : MonoBehaviour, IButtonClicked
         gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Initialize(GameObject gameObject)
     {
-
+        _gameManager = gameObject.GetComponent<GameManager>();
     }
 
     public void ButtonClicked()

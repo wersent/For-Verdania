@@ -28,7 +28,7 @@ public class ClickHandlerScript : MonoBehaviour
 
     private bool IsPointerOverUI()
     {
-        // Проверка, находится ли указатель над UI-элементом
+        // проверка, находится ли указатель над UI-элементом
         return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
     }
 
@@ -36,7 +36,7 @@ public class ClickHandlerScript : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && timeToCooldown >= cooldown)
         {
-            // Получаем текущий UI-объект под указателем
+            // получаем текущий UI-объект под указателем
             PointerEventData pointerData = new(EventSystem.current)
             {
                 position = Input.mousePosition
@@ -45,7 +45,7 @@ public class ClickHandlerScript : MonoBehaviour
             List<RaycastResult> results = new();
             EventSystem.current.RaycastAll(pointerData, results);
 
-            // Берём первый элемент (он находится "сверху")
+            // берём первый элемент
             if (results.Count > 0)
             {
                 var topUIElement = results[0].gameObject;
@@ -62,12 +62,11 @@ public class ClickHandlerScript : MonoBehaviour
 
     private void HandleWorldClick()
     {
-        // Выполняем Raycast для физических объектов
         RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
         if (Input.GetMouseButtonDown(0) && hits.Length > 0 && timeToCooldown >= cooldown)
         {
-            // Сортируем объекты по z-координате (ближайший к камере — "сверху")
+            // сортируем объекты по z-координате (ближайший - сверху)
             System.Array.Sort(hits, (a, b) => a.collider.transform.position.z.CompareTo(b.collider.transform.position.z));
 
             foreach (var hit in hits)
@@ -77,7 +76,7 @@ public class ClickHandlerScript : MonoBehaviour
                     selectable.OnClick(hit.collider.gameObject);
                     clickedObject = hit.collider.gameObject;
                     timeToCooldown = 0;
-                    break; // Обрабатываем только первый (верхний) объект
+                    break;
                 }
             }
         }

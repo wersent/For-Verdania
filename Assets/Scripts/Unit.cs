@@ -8,7 +8,7 @@ public abstract class Unit : MonoBehaviour
 {
     public delegate void OnHpChanged(int hp);
     public event OnHpChanged OnHpChangedEvent;
-    OnHpChanged del;
+    //OnHpChanged del;
 
     [SerializeField] protected int unitHp;
     [SerializeField] protected int dmg;
@@ -29,17 +29,13 @@ public abstract class Unit : MonoBehaviour
     }
     public virtual int Dmg { get => currentDmg; set => currentDmg = dmg; }
     public virtual int Amount { get => currentAmount; set => currentAmount = amount; }
-    public virtual string Description { get => description; set => description = "huy"; }
+    public virtual string Description { get => description; set => description = "poor peasant"; }
 
-    void Start()
-    {
-        //del += (int penis) => Debug.Log(penis);
-        //del += Attack;
-
-        //del(currentHp);
-    }
     public Sprite GetIcon() { return icon; }
+
     //public string GetDescription() { return description; }
+
     public abstract void Attack(int damage);
+
     public abstract void OnDeath();
 }

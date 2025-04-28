@@ -157,10 +157,10 @@ RectTransform:
   - {fileID: 642644567}
   m_Father: {fileID: 1529752039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -450, y: 0}
-  m_SizeDelta: {x: -900, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 100, y: 0}
+  m_SizeDelta: {x: 200, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &117809137
 MonoBehaviour:
@@ -687,7 +687,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -938,8 +938,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -451.06, y: 0.000061035}
-  m_SizeDelta: {x: 210, y: 495}
+  m_AnchoredPosition: {x: -450.24997, y: -1.25}
+  m_SizeDelta: {x: 200, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &831466824
 MonoBehaviour:
@@ -1239,10 +1239,10 @@ RectTransform:
   - {fileID: 1341254618}
   m_Father: {fileID: 1529752039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -450, y: 0}
-  m_SizeDelta: {x: -900, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 100, y: 0}
+  m_SizeDelta: {x: 200, y: 552}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1388491748
 MonoBehaviour:
@@ -1555,7 +1555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _placement: {fileID: 0}
   _textMeshProUGUI: {fileID: 642644569}
-  _placementInfoController: {fileID: 0}
+  _placementInfoController: {fileID: 117809139}
   _testPanel2: {fileID: 1388491750}
   _scrollViewHandler: {fileID: 0}
 --- !u!1 &1647232693

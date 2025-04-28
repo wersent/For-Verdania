@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 117809137}
   - component: {fileID: 117809139}
   m_Layer: 5
-  m_Name: TestPanel1
+  m_Name: Placement Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitIcon: {fileID: 509134016}
   _scrollViewHandler: {fileID: 0}
-  _outline: {fileID: 0}
+  _rectTransform: {fileID: 0}
 --- !u!1 &511373167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitIcon: {fileID: 1341254619}
   _scrollViewHandler: {fileID: 0}
-  _outline: {fileID: 0}
+  _rectTransform: {fileID: 0}
 --- !u!1 &1388491746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,7 +1555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _placement: {fileID: 0}
   _textMeshProUGUI: {fileID: 642644569}
-  _testPanel1: {fileID: 117809139}
+  _placementInfoController: {fileID: 0}
   _testPanel2: {fileID: 1388491750}
   _scrollViewHandler: {fileID: 0}
 --- !u!1 &1647232693

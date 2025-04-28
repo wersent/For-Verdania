@@ -4,11 +4,18 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TestPanel1 : MonoBehaviour, ISetParentAndChildrenDisable
+public class PlacementInfoController : MonoBehaviour, ISetParentAndChildrenDisable
 {
     [SerializeField] private ScrollViewHandler _scrollViewHandler;
     [SerializeField] private TextMeshProUGUI _textMeshProUGUI;
     [SerializeField] private Button _button;
+    private RectTransform _buttonRectTransform;
+
+    void Awake()
+    {
+        _buttonRectTransform = _button.GetComponent<RectTransform>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +32,7 @@ public class TestPanel1 : MonoBehaviour, ISetParentAndChildrenDisable
     {
         _scrollViewHandler = scrollViewHandler;
 
-        int rightEdge = (int)(_button.GetComponent<RectTransform>().transform.position.x + _button.GetComponent<RectTransform>().rect.width / 2) + 10;
+        int rightEdge = (int)(_buttonRectTransform.transform.position.x + _buttonRectTransform.rect.width / 2) + 10;
         float newPosX = rightEdge + _scrollViewHandler.GetComponent<RectTransform>().rect.width;
         Vector2 newPosition = _scrollViewHandler.GetComponent<RectTransform>().anchoredPosition;
         newPosition.x = newPosX;

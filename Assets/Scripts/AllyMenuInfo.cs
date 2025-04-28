@@ -10,7 +10,7 @@ public class AllyMenuInfo : MonoBehaviour, ISelectable, ISetParentAndChildrenDis
 {
     public Placement _placement;
     [SerializeField] private TextMeshProUGUI _textMeshProUGUI;
-    [SerializeField] private TestPanel1 _testPanel1;
+    [SerializeField] private PlacementInfoController _placementInfoController;
     [SerializeField] private TestPanel2 _testPanel2;
     [SerializeField] private ScrollViewHandler _scrollViewHandler;
     // Start is called before the first frame update
@@ -25,10 +25,10 @@ public class AllyMenuInfo : MonoBehaviour, ISelectable, ISetParentAndChildrenDis
         if (gameObject.TryGetComponent<Placement>(out Placement placement))
         {
             _placement = placement;
-            SetChildrenDisable(_testPanel1.gameObject);
-            _testPanel1.gameObject.SetActive(true);
-            _scrollViewHandler.gameObject.transform.SetParent(_testPanel1.transform);
-            _testPanel1.Initialize(_scrollViewHandler);
+            SetChildrenDisable(_placementInfoController.gameObject);
+            _placementInfoController.gameObject.SetActive(true);
+            _scrollViewHandler.gameObject.transform.SetParent(_placementInfoController.transform);
+            _placementInfoController.Initialize(_scrollViewHandler);
         }
         else if (gameObject.TryGetComponent<UnitRegiment>(out UnitRegiment unitRegiment))
         {

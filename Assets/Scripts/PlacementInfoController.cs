@@ -32,11 +32,9 @@ public class PlacementInfoController : MonoBehaviour, ISetParentAndChildrenDisab
     {
         _scrollViewHandler = scrollViewHandler;
 
-        int rightEdge = (int)(_buttonRectTransform.transform.position.x + _buttonRectTransform.rect.width / 2) + 10;
-        float newPosX = rightEdge + _scrollViewHandler.GetComponent<RectTransform>().rect.width;
-        Vector2 newPosition = _scrollViewHandler.GetComponent<RectTransform>().anchoredPosition;
-        newPosition.x = newPosX;
-        _scrollViewHandler.GetComponent<RectTransform>().anchoredPosition = newPosition;
+        _scrollViewHandler.gameObject.SetActive(true);
+        _scrollViewHandler.OnSetActive(_button.gameObject);
+        _scrollViewHandler.gameObject.SetActive(false);
 
         _button.onClick.AddListener(_scrollViewHandler.ButtonClicked);
     }

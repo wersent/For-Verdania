@@ -8,6 +8,7 @@ public class ScrollViewHandler : MonoBehaviour, IButtonClicked
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private UICardController _cardController;
     [SerializeField] private RectTransform _contentTransform;
+    [SerializeField] private RectTransform _rectTransform;
 
     void Start()
     {
@@ -29,6 +30,18 @@ public class ScrollViewHandler : MonoBehaviour, IButtonClicked
 
     public void ButtonClicked()
     {
+        gameObject.SetActive(true);
+    }
+
+    public void OnSetActive(GameObject gameObject)
+    {
+        int rightEdge = (int)(gameObject.GetComponent<RectTransform>().anchoredPosition.x + gameObject.GetComponent<RectTransform>().rect.width / 2) + 15;
+        float newPosX = rightEdge + _rectTransform.rect.width;
+
+        float newPosY = gameObject.GetComponent<RectTransform>().anchoredPosition.y;
+
+        Vector2 newPosition = new(newPosX, newPosY);
+        _rectTransform.anchoredPosition = newPosition;
         gameObject.SetActive(true);
     }
 }

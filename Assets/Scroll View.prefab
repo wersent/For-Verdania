@@ -327,6 +327,7 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _cardController: {fileID: -5295238647305890862, guid: 0e6acc53b9aa81142848ed700cff3fe1, type: 3}
   _contentTransform: {fileID: 533660665942450093}
+  _rectTransform: {fileID: 1373353970040469524}
 --- !u!1 &7411220023860617226
 GameObject:
   m_ObjectHideFlags: 0

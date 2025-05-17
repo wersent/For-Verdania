@@ -19,15 +19,8 @@ public class UnitCompositionController : MonoBehaviour, ISelectable
 
     public void OnClick(GameObject unitRegiment)
     {
-        int rightEdge = (int)(_rectTransform.anchoredPosition.x + _rectTransform.rect.width / 2) + 15;
-        float newPosX = rightEdge + _scrollViewHandler.GetComponent<RectTransform>().rect.width;
-
-        int upEdge = (int)(_rectTransform.anchoredPosition.y + _rectTransform.rect.height / 2);
-        float newPosY = upEdge - _scrollViewHandler.GetComponent<RectTransform>().rect.height / 4;
-
-        Vector2 newPosition = new(newPosX, newPosY);
-        _scrollViewHandler.GetComponent<RectTransform>().anchoredPosition = newPosition;
         _scrollViewHandler.gameObject.SetActive(true);
+        _scrollViewHandler.OnSetActive(this.gameObject);
     }
 
     public void Initialize(ScrollViewHandler scrollViewHandler)

@@ -30,30 +30,30 @@ public class UnitCompositionController : MonoBehaviour, ISelectable
 
     private void Update()
     {
-        // Получаем позицию курсора в мировых координатах
-        Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //// Получаем позицию курсора в мировых координатах
+        //Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Проверяем, находится ли курсор над объектом
-        Collider2D hit = Physics2D.OverlapPoint(mouseWorldPosition);
+        //// Проверяем, находится ли курсор над объектом
+        //Collider2D hit = Physics2D.OverlapPoint(mouseWorldPosition);
 
-        if (hit != null && hit.gameObject == this.gameObject)
-        {
-            // Добавляем Outline, если его еще нет
-            if (_outline == null)
-            {
-                _outline = gameObject.AddComponent<Outline>();
-                _outline.effectColor = Color.red;
-                _outline.effectDistance = new Vector2(2, 2); // Размер подсветки
-            }
-        }
-        else
-        {
-            // Удаляем Outline, если курсор вышел за пределы объекта
-            if (_outline != null)
-            {
-                Destroy(_outline);
-                _outline = null;
-            }
-        }
+        //if (hit != null && hit.gameObject == this.gameObject)
+        //{
+        //    // Добавляем Outline, если его еще нет
+        //    if (_outline == null)
+        //    {
+        //        _outline = gameObject.AddComponent<Outline>();
+        //        _outline.effectColor = Color.red;
+        //        _outline.effectDistance = new Vector2(2, 2); // Размер подсветки
+        //    }
+        //}
+        //else
+        //{
+        //    // Удаляем Outline, если курсор вышел за пределы объекта
+        //    if (_outline != null)
+        //    {
+        //        Destroy(_outline);
+        //        _outline = null;
+        //    }
+        //}
     }
 }

@@ -2,16 +2,18 @@ namespace Level
 {
     class GameStateMachine
     {
-        private void OnFieldStateChanged(FieldState state)
+        public GameStateMachine(FieldController fc, RegimentController rc)
+        {
+            rc.OnEnd += OnEnd;
+        }
+
+        private void OnEnd(RegimentSide side)
         {
 
         }
-        public GameStateMachine(FieldController fc)
+        private void OnFieldStateChanged(FieldState state)
         {
-            foreach (Field f in fc.Level)
-            {
-                f.FieldStateChanged += OnFieldStateChanged;
-            }
+
         }
     }
 

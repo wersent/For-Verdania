@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+/*
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private ScrollViewHandler _scrollViewHandler;
@@ -22,3 +22,4 @@ public class GameManager : MonoBehaviour
         scrollViewHandler.Initialize(this.gameObject);
     }
 }
+*/

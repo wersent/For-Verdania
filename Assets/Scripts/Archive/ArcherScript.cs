@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class ArcherScript : Regiment
 {
     public override string Description { get => description; set => description = value; }
@@ -33,3 +33,4 @@ public class ArcherScript : Regiment
         
     }
 }
+*/

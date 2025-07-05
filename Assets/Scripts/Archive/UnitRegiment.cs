@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class UnitRegiment : Regiment, ISelectable
 {
     public event Action<Placement> PositionChanged = delegate { };
@@ -134,3 +134,4 @@ public class UnitRegiment : Regiment, ISelectable
         }
     }
 }
+*/

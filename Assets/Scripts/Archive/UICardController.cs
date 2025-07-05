@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.XR;
-
+/*
 public class UICardController : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Regiment unit;
@@ -66,3 +66,4 @@ public class UICardController : MonoBehaviour, IPointerClickHandler
         }
     }
 }
+*/

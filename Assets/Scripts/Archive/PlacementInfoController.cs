@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
 public class PlacementInfoController : MonoBehaviour, ISetParentAndChildrenDisable
 {
     [SerializeField] private ScrollViewHandler _scrollViewHandler;
@@ -48,3 +48,4 @@ public class PlacementInfoController : MonoBehaviour, ISetParentAndChildrenDisab
         gameObject.SetActive(false);
     }
 }
+*/

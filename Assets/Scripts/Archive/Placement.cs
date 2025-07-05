@@ -5,7 +5,7 @@ using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using static Unity.Burst.Intrinsics.X86.Avx;
-
+/*
 public class Placement : MonoBehaviour, ISelectable
 {
     public AllyMenuInfo _allyMenuInfo;
@@ -44,3 +44,4 @@ public class Placement : MonoBehaviour, ISelectable
 
     }
 }
+*/

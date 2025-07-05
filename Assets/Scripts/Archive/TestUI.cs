@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+/*
 public class TestUI : MonoBehaviour
 {
     public UnitRegiment unit;
@@ -26,3 +26,4 @@ public class TestUI : MonoBehaviour
         
     }
 }
+*/

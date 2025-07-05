@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
 public class TestPanel2 : MonoBehaviour, ISetParentAndChildrenDisable
 {
     [SerializeField] protected ScrollViewHandler _scrollViewHandler;
@@ -40,3 +40,4 @@ public class TestPanel2 : MonoBehaviour, ISetParentAndChildrenDisable
         gameObject.SetActive(false);
     }
 }
+*/

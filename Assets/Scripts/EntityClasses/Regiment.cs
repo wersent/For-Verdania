@@ -4,14 +4,26 @@ namespace Level
 {
     class Regiment
     {
-        private ReigmentState _unitState;
-        public event Action<ReigmentState> OnStateChanged;
+        private RegimentSide _side;
+        public event Action<ReigmentMove> OnRegimentMove;
+
+        public RegimentSide Side
+        {
+            get => _side;
+            private set => _side = value;
+        }
+
         public Regiment()
         {
         }
     }
 
-    enum ReigmentState
+    enum RegimentSide
+    {
+        Player,
+        Enemy
+    }
+    enum ReigmentMove
     {
         Idle,
         Moving,

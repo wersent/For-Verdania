@@ -1,8 +1,8 @@
 namespace Level
 {
-    class RegimentLoader
+    class UnitLoader
     {
-        public RegimentLoader()
+        public UnitLoader()
         {
         }
     }

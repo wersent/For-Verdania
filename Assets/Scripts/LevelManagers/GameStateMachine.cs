@@ -1,9 +1,12 @@
+using UnityEngine;
+
 namespace Level
 {
     class GameStateMachine
     {
         public GameStateMachine(FieldController fc, RegimentController rc)
         {
+            Debug.Log("GameStateMachine");
             rc.OnEnd += OnEnd;
         }
 

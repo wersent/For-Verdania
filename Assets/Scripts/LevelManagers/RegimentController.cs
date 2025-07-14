@@ -12,6 +12,7 @@ namespace Level
 
         public RegimentController(LevelLoader loader, FieldController controller)
         {
+            UnityEngine.Debug.Log("RegimentController");
             foreach (Regiment r in loader.Regiments)
             {
                 _regiments.Add(r);

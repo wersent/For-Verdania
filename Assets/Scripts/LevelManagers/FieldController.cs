@@ -5,6 +5,7 @@ namespace Level
         private Field[,] _level;
         public FieldController(LevelLoader loader)
         {
+            UnityEngine.Debug.Log("FieldController");
             _level = new Field[loader.LevelSize.Item1, loader.LevelSize.Item2];
         }
 

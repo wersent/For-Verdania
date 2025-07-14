@@ -21,6 +21,7 @@ namespace Level
 
         public LevelLoader()
         {
+            UnityEngine.Debug.Log("LevelLoader");
             _levelSize = new Tuple<int, int>(5, 5);
         }
     }

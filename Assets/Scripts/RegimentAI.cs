@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Level
 {
@@ -9,17 +10,7 @@ namespace Level
 
         }
 
-        public virtual void Idle()
-        {
-
-        }
-
-        public virtual object Attack()
-        {
-            return null;
-        }
-
-        public virtual object MovePosition()
+        public virtual Field TurnProcessing(RegimentInfo info, RegimentView view)
         {
             return null;
         }

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class RookieScript : Unit
+/*
+public class RookieScript : Regiment
 {
     public override string Description { get => description; set => description = value; }
 
@@ -35,3 +35,4 @@ public class RookieScript : Unit
         
     }
 }
+*/

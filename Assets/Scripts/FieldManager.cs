@@ -1,7 +1,7 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class FieldManager : MonoBehaviour
 {
     [SerializeField] private int _weight, _height;
@@ -23,7 +23,7 @@ public class FieldManager : MonoBehaviour
         {
             for (int y = 0; y < _height; y++)
             {
-                // Учитываем scale при расчёте позиции
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ scale пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 float posX = (x - _weight / 2f + 0.5f) * (spacing * prefabScale.x + 0.015f);
                 float posY = (y - _height / 1.68f + 0.5f) * (spacing * prefabScale.y + 0.1f);
 
@@ -33,9 +33,10 @@ public class FieldManager : MonoBehaviour
                 spawnedPlacement._allyMenuInfo = GetComponent<AllyMenuInfo>();
                 spawnedPlacement.name = $"Placement {x} {y}";
 
-                // Важно: убираем scale из спавненного объекта, если он уже учтён в префабе
+                // пїЅпїЅпїЅпїЅпїЅ: пїЅпїЅпїЅпїЅпїЅпїЅпїЅ scale пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 spawnedPlacement.transform.localScale = prefabScale;
             }
         }
     }
 }
+*/

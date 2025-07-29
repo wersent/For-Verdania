@@ -1,10 +1,10 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
-
+/*
 public class UnitCompositionController : MonoBehaviour, ISelectable
 {
     [SerializeField] private Image _unitIcon;
@@ -30,30 +30,31 @@ public class UnitCompositionController : MonoBehaviour, ISelectable
 
     private void Update()
     {
-        //// Получаем позицию курсора в мировых координатах
-        //Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        //// Проверяем, находится ли курсор над объектом
-        //Collider2D hit = Physics2D.OverlapPoint(mouseWorldPosition);
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        Collider2D hit = Physics2D.OverlapPoint(mouseWorldPosition);
 
-        //if (hit != null && hit.gameObject == this.gameObject)
-        //{
-        //    // Добавляем Outline, если его еще нет
-        //    if (_outline == null)
-        //    {
-        //        _outline = gameObject.AddComponent<Outline>();
-        //        _outline.effectColor = Color.red;
-        //        _outline.effectDistance = new Vector2(2, 2); // Размер подсветки
-        //    }
-        //}
-        //else
-        //{
-        //    // Удаляем Outline, если курсор вышел за пределы объекта
-        //    if (_outline != null)
-        //    {
-        //        Destroy(_outline);
-        //        _outline = null;
-        //    }
-        //}
+        if (hit != null && hit.gameObject == this.gameObject)
+        {
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Outline, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ
+            if (_outline == null)
+            {
+                _outline = gameObject.AddComponent<Outline>();
+                _outline.effectColor = Color.red;
+                _outline.effectDistance = new Vector2(2, 2); // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+            }
+        }
+        else
+        {
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ Outline, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+            if (_outline != null)
+            {
+                Destroy(_outline);
+                _outline = null;
+            }
+        }
     }
 }
+*/

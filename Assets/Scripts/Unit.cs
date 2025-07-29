@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
-public abstract class Unit : MonoBehaviour
+/*
+public abstract class Regiment : MonoBehaviour
 {
     public delegate void OnHpChanged(int hp);
     public event OnHpChanged OnHpChangedEvent;
@@ -39,3 +39,4 @@ public abstract class Unit : MonoBehaviour
 
     public abstract void OnDeath();
 }
+*/

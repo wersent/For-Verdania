@@ -1,11 +1,11 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
-
+/*
 public class AllyMenuInfo : MonoBehaviour, ISelectable, ISetParentAndChildrenDisable
 {
     public Placement _placement;
@@ -60,7 +60,7 @@ public class AllyMenuInfo : MonoBehaviour, ISelectable, ISetParentAndChildrenDis
 
     public void SetParentAndChildrenDisable()
     {
-        // Деактивируем всех потомков, когда родитель деактивируется
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         foreach (Transform child in transform)
         {
             if (child.gameObject.TryGetComponent<ISetParentAndChildrenDisable>(out var setParentAndChildrenDisable)) setParentAndChildrenDisable.SetParentAndChildrenDisable();
@@ -68,3 +68,4 @@ public class AllyMenuInfo : MonoBehaviour, ISelectable, ISetParentAndChildrenDis
         gameObject.SetActive(false);
     }
 }
+*/

@@ -7,10 +7,10 @@ using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.XR;
-
+/*
 public class UICardController : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private Unit unit;
+    [SerializeField] private Regiment unit;
     [SerializeField] private TextMeshProUGUI _textMeshProUGUI;
     [SerializeField] private Image _image;
     [SerializeField] private UnitRegiment _unitRegiment;
@@ -45,7 +45,7 @@ public class UICardController : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void Initialize(Unit unitData)
+    public void Initialize(Regiment unitData)
     {
         unit = unitData;
         _image.sprite = unit.GetIcon();
@@ -66,3 +66,4 @@ public class UICardController : MonoBehaviour, IPointerClickHandler
         }
     }
 }
+*/

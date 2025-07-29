@@ -1,8 +1,8 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+/*
 public class AllyForceScript : MonoBehaviour
 {
     public AllyMenuInfo menuInfo;
@@ -34,17 +34,17 @@ public class AllyForceScript : MonoBehaviour
 
     private void OnMouseUp()
     {
-        // Выносим повторяющиеся вызовы в переменные
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Очищаем выделения
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         HighlightController.Instance.ClearAllHighlights();
 
-        // Устанавливаем стандартный цвет
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         spriteRenderer.color = new Color(0.5f, 0.4646226f, 0.4646226f);
 
-        // Делаем рейкаст с явным указанием параметров
+        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero, Mathf.Infinity);
 
         if (hit.collider != null)
@@ -59,11 +59,12 @@ public class AllyForceScript : MonoBehaviour
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = true;
 
-        // Получаем ссылку на объект один раз
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
         GameObject selectedObject = menuInfo._placement.gameObject;
         Vector3 targetPosition = selectedObject.transform.position;
 
-        // Устанавливаем позицию
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         transform.position = targetPosition;
     }
 }
+*/

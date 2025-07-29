@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 [RequireComponent(typeof(SpriteRenderer))]
 public class HighlightableObject : MonoBehaviour, IHighlightable
 {
@@ -17,3 +17,4 @@ public class HighlightableObject : MonoBehaviour, IHighlightable
     public void Highlight(Color color) => _renderer.color = color;
     public void ResetHighlight() => _renderer.color = _originalColor;
 }
+*/

@@ -1,13 +1,13 @@
-using System;
+п»їusing System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class UnitRegiment : Unit, ISelectable
+/*
+public class UnitRegiment : Regiment, ISelectable
 {
     public event Action<Placement> PositionChanged = delegate { };
 
-    public List<Unit> unitsTypes = new(2);
+    public List<Regiment> unitsTypes = new(2);
     [SerializeField] private bool _isDragging = false;
     [SerializeField] private float _timeInHolding = 0f;
     [SerializeField] private const float _holdingCooldown = 1f;
@@ -62,17 +62,17 @@ public class UnitRegiment : Unit, ISelectable
     {
         if (_isDragging)
         {
-            // Выносим повторяющиеся вызовы в переменные
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            // Очищаем выделения
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             HighlightController.Instance.ClearAllHighlights();
 
-            // Устанавливаем стандартный цвет
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
             spriteRenderer.color = _color;
 
-            // Делаем рейкаст с явным указанием параметров
+            // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero, Mathf.Infinity);
 
             if (hit.collider != null && hit.collider.TryGetComponent(out Placement placement) && placement != _placement)
@@ -91,7 +91,7 @@ public class UnitRegiment : Unit, ISelectable
         _isDragging = false;
     }
 
-    public void OnUnitsCompositionChange(Unit unit)
+    public void OnUnitsCompositionChange(Regiment unit)
     {
         if (unitsTypes.Count <= 2)
         {
@@ -116,7 +116,7 @@ public class UnitRegiment : Unit, ISelectable
             {
                 _timeInHolding += Time.deltaTime;
 
-                // Проверяем, превышен ли порог времени
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 if (_timeInHolding >= _holdingCooldown)
                 {
                     _isDragging = true;
@@ -130,7 +130,8 @@ public class UnitRegiment : Unit, ISelectable
         else
         {
             _timeInHolding = 0f;
-            _isDragging = false; // Сбрасываем состояние перетаскивания при отпускании кнопки
+            _isDragging = false; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         }
     }
 }
+*/

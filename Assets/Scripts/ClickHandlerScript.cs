@@ -1,9 +1,9 @@
-using System.Collections.Generic;
+п»їusing System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
-
+/*
 public class ClickHandlerScript : MonoBehaviour
 {
     const float cooldown = 0.5f;
@@ -28,7 +28,7 @@ public class ClickHandlerScript : MonoBehaviour
 
     private bool IsPointerOverUI()
     {
-        // проверка, находится ли указатель над UI-элементом
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ UI-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
     }
 
@@ -36,7 +36,7 @@ public class ClickHandlerScript : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && timeToCooldown >= cooldown)
         {
-            // получаем текущий UI-объект под указателем
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ UI-пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             PointerEventData pointerData = new(EventSystem.current)
             {
                 position = Input.mousePosition
@@ -45,7 +45,7 @@ public class ClickHandlerScript : MonoBehaviour
             List<RaycastResult> results = new();
             EventSystem.current.RaycastAll(pointerData, results);
 
-            // берём первый элемент
+            // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             if (results.Count > 0)
             {
                 var topUIElement = results[0].gameObject;
@@ -66,7 +66,7 @@ public class ClickHandlerScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && hits.Length > 0 && timeToCooldown >= cooldown)
         {
-            // сортируем объекты по z-координате (ближайший - сверху)
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ z-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅ)
             System.Array.Sort(hits, (a, b) => a.collider.transform.position.z.CompareTo(b.collider.transform.position.z));
 
             foreach (var hit in hits)
@@ -87,3 +87,4 @@ public class ClickHandlerScript : MonoBehaviour
         }
     }
 }
+*/

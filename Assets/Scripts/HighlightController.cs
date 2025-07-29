@@ -1,7 +1,7 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class HighlightController : MonoBehaviour
 {
     public static HighlightController Instance { get; private set; }
@@ -31,17 +31,17 @@ public class HighlightController : MonoBehaviour
 
     public void ProcessHighlighting(Vector2 mousePosition)
     {
-        // Получаем объект под курсором
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         var hit = Physics2D.Raycast(mousePosition, Vector2.zero);
         var newHighlight = hit.collider?.GetComponent<IHighlightable>();
 
-        // Если выделение не изменилось - ничего не делаем
+        // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (newHighlight == _currentHighlighted) return;
 
-        // Сбрасываем предыдущее выделение
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         _currentHighlighted?.ResetHighlight();
 
-        // Устанавливаем новое выделение
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (newHighlight != null && newHighlight != (IHighlightable)_draggedObject)
         {
             newHighlight.Highlight(Color.red);
@@ -68,3 +68,4 @@ public class HighlightController : MonoBehaviour
         }
     }
 }
+*/

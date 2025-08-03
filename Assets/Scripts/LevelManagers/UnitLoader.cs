@@ -4,6 +4,7 @@ namespace Level
     {
         public UnitLoader()
         {
+            // переквалифицировать в UserLoader
         }
     }
 }

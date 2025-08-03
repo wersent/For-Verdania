@@ -5,7 +5,7 @@ namespace Level
     class Regiment
     {
         private RegimentSide _side;
-        public event Action<ReigmentMove> OnRegimentMove;
+        public event Action<RegimentMove> OnRegimentMove;
 
         public RegimentSide Side
         {
@@ -23,7 +23,7 @@ namespace Level
         Player,
         Enemy
     }
-    enum ReigmentMove
+    enum RegimentMove
     {
         Idle,
         Moving,

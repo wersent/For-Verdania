@@ -1,6 +1,7 @@
 using System;
+using UnityEngine;
 
-namespace Level
+namespace LevelViewModel
 {
     class Field
     {
@@ -8,10 +9,10 @@ namespace Level
         private FieldState _fieldState;
         public event Action<FieldState> FieldStateChanged;
 
-        public Field(FieldScriptable fieldInfo)
+        public Field(Regiment regiment)
         {
             _fieldState = FieldState.Empty;
-            _regiment = fieldInfo.Regiment;
+            _regiment = regiment;
         }
     }
 

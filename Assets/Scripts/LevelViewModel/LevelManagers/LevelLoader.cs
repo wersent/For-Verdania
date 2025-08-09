@@ -1,7 +1,8 @@
 using System;
+using Model;
 using System.Collections.Generic;
 
-namespace Level
+namespace LevelViewModel
 {
     class LevelLoader
     {
@@ -19,10 +20,10 @@ namespace Level
             private set => _levelSize = value;
         }
 
-        public LevelLoader()
+        public LevelLoader(string path, FieldController fc, RegimentController rc)
         {
-            UnityEngine.Debug.Log("LevelLoader");
-            _levelSize = new Tuple<int, int>(5, 5);
+            LevelInfo level = JSONParser.LevelParser(path);
+            fc.CreateField(level, rc);
         }
     }
 }

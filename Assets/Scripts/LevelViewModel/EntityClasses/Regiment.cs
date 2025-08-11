@@ -6,9 +6,14 @@ namespace LevelViewModel
 {
     class Regiment
     {
+<<<<<<< HEAD:Assets/Scripts/LevelViewModel/EntityClasses/Regiment.cs
         private GameObject _regimentView;
         private EntitySide _side;
         public event Action<ReigmentMove> OnRegimentMove;
+=======
+        private RegimentSide _side;
+        public event Action<RegimentMove> OnRegimentMove;
+>>>>>>> main:Assets/Scripts/EntityClasses/Regiment.cs
 
         public EntitySide Side
         {
@@ -22,7 +27,16 @@ namespace LevelViewModel
         }
     }
 
+<<<<<<< HEAD:Assets/Scripts/LevelViewModel/EntityClasses/Regiment.cs
     enum ReigmentMove
+=======
+    enum RegimentSide
+    {
+        Player,
+        Enemy
+    }
+    enum RegimentMove
+>>>>>>> main:Assets/Scripts/EntityClasses/Regiment.cs
     {
         Idle,
         Moving,

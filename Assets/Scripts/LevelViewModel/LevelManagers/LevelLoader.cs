@@ -6,13 +6,13 @@ namespace LevelViewModel
 {
     class LevelLoader
     {
-        private List<Regiment> _regiemts = new List<Regiment>();
+        private List<Regiment> _regiments = new List<Regiment>();
         private Tuple<int, int> _levelSize;
 
         public List<Regiment> Regiments
         {
-            get => _regiemts;
-            private set => _regiemts = value;
+            get => _regiments;
+            private set => _regiments = value;
         }
         public Tuple<int, int> LevelSize
         {

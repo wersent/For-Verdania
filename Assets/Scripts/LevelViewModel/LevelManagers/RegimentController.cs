@@ -34,7 +34,7 @@ namespace LevelViewModel
             _regiments.Add(regiment);
             return regiment;
         }
-        private void OnRegimentMove(ReigmentMove move)
+        private void OnRegimentMove(RegimentMove move)
         {
             if (_playerCount == 0)
             {

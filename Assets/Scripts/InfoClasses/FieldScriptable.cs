@@ -1,5 +1,5 @@
 using UnityEngine;
-using Level;
+using LevelViewModel;
 
 class FieldScriptable : ScriptableObject
 {

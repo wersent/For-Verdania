@@ -1,20 +1,24 @@
 using System;
+using Model;
+using UnityEngine;
 
-namespace Level
+namespace LevelViewModel
 {
     class Regiment
     {
-        private RegimentSide _side;
+        private GameObject _regimentView;
+        private EntitySide _side;
         public event Action<RegimentMove> OnRegimentMove;
 
-        public RegimentSide Side
+        public EntitySide Side
         {
             get => _side;
             private set => _side = value;
         }
 
-        public Regiment()
+        public Regiment(EntitySide side, GameObject regimentView)
         {
+
         }
     }
 
@@ -29,5 +33,10 @@ namespace Level
         Moving,
         Attacking,
         Dead
+    }
+    public enum EntitySide
+    {
+        Player,
+        Enemy
     }
 }

@@ -1,16 +1,15 @@
 using UnityEngine;
 
-namespace Level
+namespace LevelViewModel
 {
     class GameStateMachine
     {
         public GameStateMachine(FieldController fc, RegimentController rc)
         {
-            Debug.Log("GameStateMachine");
             rc.OnEnd += OnEnd;
         }
 
-        private void OnEnd(RegimentSide side)
+        private void OnEnd(EntitySide side)
         {
 
         }

@@ -1,19 +1,23 @@
 using Zenject;
+using UnityEngine;
 
-namespace Level
+namespace LevelViewModel
 {
     public class LevelMonoInstaller : MonoInstaller
     {
-        LevelLoader _loader;
-        GameStateMachine _machine;
-        FieldController _fContrloller;
-        RegimentController _rController;
+        [SerializeField]
+        private GameObject _grid;
+        private FieldController _fContrloller;
+        private RegimentController _rController;
+        private LevelLoader _loader;
+        private GameStateMachine _machine;
+        
         public override void InstallBindings()
         {
-            _loader = new LevelLoader();
-            _fContrloller = new FieldController(_loader);
-            _rController = new RegimentController(_loader, _fContrloller);
-            _machine = new GameStateMachine(_fContrloller, _rController);
+            FieldController _fContrloller = new FieldController(_grid);
+            RegimentController _rController = new RegimentController();
+            LevelLoader _loader = new LevelLoader("testpath", _fContrloller, _rController);
+            GameStateMachine _machine = new GameStateMachine(_fContrloller, _rController);
         }
     }
 }

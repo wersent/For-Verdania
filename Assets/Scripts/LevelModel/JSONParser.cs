@@ -14,7 +14,7 @@ namespace Model
                 LevelViewModel.EntitySide.Enemy,
                 EntityType.Regiment),
 
-                new FieldEntityInfo(new Tuple<int, int>(3, 3),
+                new FieldEntityInfo(new Tuple<int, int>(1, 2),
                 "goon",
                 LevelViewModel.EntitySide.Enemy,
                 EntityType.Regiment),

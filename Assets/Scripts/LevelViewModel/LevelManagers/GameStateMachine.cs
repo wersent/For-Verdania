@@ -7,6 +7,7 @@ namespace LevelViewModel
         public GameStateMachine(FieldController fc, RegimentController rc)
         {
             rc.OnEnd += OnEnd;
+            
         }
 
         private void OnEnd(EntitySide side)

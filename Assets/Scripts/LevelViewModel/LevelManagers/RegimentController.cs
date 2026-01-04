@@ -30,11 +30,11 @@ namespace LevelViewModel
             }
             GameObject regimentView = _regimentFactory.CreateRegimentPrefab(info.Name, field);
             Regiment regiment = new Regiment(info.Side, regimentView);
-            regiment.OnRegimentMove += OnRegimentMove;
+            regiment.OnRegimentMove += OnRegimentAction;
             _regiments.Add(regiment);
             return regiment;
         }
-        private void OnRegimentMove(RegimentMove move)
+        private void OnRegimentAction(RegimentMove move)
         {
             if (_playerCount == 0)
             {

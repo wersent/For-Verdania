@@ -9,7 +9,7 @@ namespace Model
             return new LevelInfo(new Tuple<int, int>(5, 5),
             new FieldEntityInfo[3]
             {
-                new FieldEntityInfo(new Tuple<int, int>(2, 2),
+                new FieldEntityInfo(new Tuple<int, int>(0, 0),
                 "goon",
                 LevelViewModel.EntitySide.Enemy,
                 EntityType.Regiment),

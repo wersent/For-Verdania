@@ -5,7 +5,7 @@ namespace LevelViewModel
 {
     class FieldController
     {
-        private FieldFactory _fieldFactory;
+        private ViewFieldFactory _fieldFactory;
         private Field[,] _level;
 
         public Field[,] Level
@@ -16,7 +16,7 @@ namespace LevelViewModel
 
         public FieldController(GameObject grid)
         {
-            _fieldFactory = new FieldFactory(grid);
+            _fieldFactory = new ViewFieldFactory(grid);
         }
 
         public void CreateField(LevelInfo info, RegimentController rc)

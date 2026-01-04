@@ -18,7 +18,14 @@ namespace LevelViewModel
 
         public Regiment(EntitySide side, GameObject regimentView)
         {
+            _side = side;
+            _regimentView = regimentView;
+        }
 
+        private Tuple<int, int> Pathfinder(Tuple<int, int> destination)
+        {
+            Tuple<int, int> field = Tuple.Create(0, 0);
+            return field;
         }
     }
 

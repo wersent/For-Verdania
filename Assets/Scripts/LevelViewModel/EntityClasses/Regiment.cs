@@ -22,10 +22,9 @@ namespace LevelViewModel
             _regimentView = regimentView;
         }
 
-        private Tuple<int, int> Pathfinder(Tuple<int, int> destination)
+        public void Move()
         {
-            Tuple<int, int> field = Tuple.Create(0, 0);
-            return field;
+            OnRegimentMove?.Invoke(RegimentMove.Moving);
         }
     }
 

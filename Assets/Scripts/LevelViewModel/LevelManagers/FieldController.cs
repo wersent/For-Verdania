@@ -1,4 +1,6 @@
 using Model;
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace LevelViewModel
@@ -17,6 +19,11 @@ namespace LevelViewModel
         public FieldController(GameObject grid)
         {
             _fieldFactory = new ViewFieldFactory(grid);
+        }
+
+        public NodeBase GetTileAtPosition(Vector2 pos)
+        {
+            return _level[(int)pos.x, (int)pos.y];
         }
 
         public void CreateField(LevelInfo info, RegimentController rc)

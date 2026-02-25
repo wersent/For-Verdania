@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class RegimentView : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private GameObject regiment;
+
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

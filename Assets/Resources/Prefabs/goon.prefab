@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3066694349361122590}
   - component: {fileID: 8506745726879124940}
   - component: {fileID: 3725036247470578398}
-  - component: {fileID: 8963933356555808982}
+  - component: {fileID: 2479945451506333689}
   m_Layer: 5
   m_Name: goon
   m_TagString: Untagged
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8963933356555808982
+--- !u!114 &2479945451506333689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,3 +88,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c145e05ba8da946bdd91f2f7806c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  huy: 9

@@ -8,6 +8,7 @@ namespace LevelViewModel
     {
         private GameObject _regimentView;
         private EntitySide _side;
+        private Tuple<int,int> destination;
         public event Action<RegimentMove> OnRegimentMove;
 
         public EntitySide Side

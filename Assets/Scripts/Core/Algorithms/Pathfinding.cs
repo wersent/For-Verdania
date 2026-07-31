@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.Pathfinder
+namespace LevelViewModel
 {
     public class Pathfinding
     {
@@ -23,7 +23,7 @@ namespace Assets.Scripts.Pathfinder
                 processed.Add(current);
                 toSearch.Remove(current);
 
-                if (current ==  targetNode)
+                if (current == targetNode)
                 {
                     var currentPathTile = targetNode;
                     var path = new List<NodeBase>();
@@ -40,7 +40,7 @@ namespace Assets.Scripts.Pathfinder
                     return path;
                 }
 
-                foreach (var neighbor in current.Neighbors.Where(t => t.WalkPriority == 3 && !processed.Contains(t)))
+                foreach (var neighbor in current.Neighbors.Where(t => t.WalkPriority <= 3 && !processed.Contains(t)))
                 {
                     var inSearch = toSearch.Contains(neighbor);
 

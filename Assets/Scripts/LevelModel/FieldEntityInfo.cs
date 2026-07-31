@@ -1,20 +1,21 @@
 using System;
+using UnityEngine;
 
 namespace Model
 {
     public class FieldEntityInfo
     {
-        private Tuple<int, int> _position;
+        private Vector2 _position;
         private LevelViewModel.EntitySide _side;
         private EntityType _type;
         private string _name;
 
-        public Tuple<int, int> Position { get => _position; }
+        public Vector2 Position => _position;
         public LevelViewModel.EntitySide Side { get => _side; }
         public EntityType Type { get => _type; }
         public string Name { get => _name; }
 
-        public FieldEntityInfo(Tuple<int, int> position, string name, LevelViewModel.EntitySide side, EntityType type)
+        public FieldEntityInfo(Vector2 position, string name, LevelViewModel.EntitySide side, EntityType type)
         {
             _position = position;
             _name = name;

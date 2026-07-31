@@ -2,21 +2,19 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using LevelViewModel;
 
-namespace LevelViewModel
-{
-    class Field : NodeBase
+
+    public class FieldModel : NodeBase
     {
-        private Regiment _regiment;
+        private RegimentModel _regiment;
         private FieldState _fieldState;
-        private FieldController fieldController;
-        private GameObject _fieldView;
+        //private GridController fieldController;
         public event Action<FieldState> FieldStateChanged;
 
-        public Field(GameObject fieldView)
+        public FieldModel() 
         {
             _fieldState = FieldState.Empty;
-            _fieldView = fieldView;
         }
 
         private static readonly List<Vector2> Dirs = new List<Vector2>() {
@@ -24,13 +22,17 @@ namespace LevelViewModel
             new Vector2(1, 1), new Vector2(1, -1), new Vector2(-1, -1), new Vector2(-1, 1)
         };
 
-        public override void CacheNeighbors()
+        public override void CacheNeighbors(Func<Vector2, NodeBase> getTileAtPosition)
         {
-            Neighbors = new List<NodeBase>();
+            Neighbors.Clear();
 
-            foreach (var tile in Dirs.Select(dir => fieldController.GetTileAtPosition(Coords.Pos + dir)).Where(tile => tile != null))
+            foreach (var dir in Dirs)
             {
-                Neighbors.Add(tile);
+                var neighbor = getTileAtPosition(Coords.Pos + dir);
+                if (neighbor != null)
+                {
+                    Neighbors.Add(neighbor);
+                }
             }
         }
 
@@ -41,12 +43,11 @@ namespace LevelViewModel
             //_renderer.transform.rotation = Quaternion.Euler(0, 0, 90 * Random.Range(0, 4));
         }
 
-        public GameObject FieldView { get { return _fieldView; } }
         public FieldState FieldState { get { return _fieldState; } }
-        public Regiment Regiment{ get { return _regiment;} set { _regiment = value; } }
+        public RegimentModel Regiment{ get { return _regiment;} set { _regiment = value; } }
     }
     
-    enum FieldState
+    public enum FieldState
     {
         Empty,
         Occupied
@@ -69,4 +70,3 @@ namespace LevelViewModel
 
         public Vector2 Pos { get; set; }
     }
-}

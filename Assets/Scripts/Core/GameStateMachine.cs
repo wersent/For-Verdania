@@ -4,7 +4,7 @@ namespace LevelViewModel
 {
     class GameStateMachine
     {
-        public GameStateMachine(FieldController fc, RegimentController rc)
+        public GameStateMachine(GridController fc, RegimentController rc)
         {
             rc.OnEnd += OnEnd;
         }

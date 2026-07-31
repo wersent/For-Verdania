@@ -7,13 +7,13 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public abstract class NodeBase
 {
-    public List<NodeBase> Neighbors { get; protected set; }
+    public List<NodeBase> Neighbors { get; protected set; } = new();
     public NodeBase Connection { get; private set; }
     public ICoords Coords;
     public float G { get; private set; }
     public float H { get; private set; }
     public float F => G + H;
-    public int WalkPriority { get; private set; }
+    public int WalkPriority { get; set; }
     public float GetDistance(NodeBase other) => Coords.GetDistance(other.Coords);
     // добавить Walkable и что-то для обозначения приоритета поля
 
@@ -24,7 +24,7 @@ public abstract class NodeBase
         Coords = coords;
     }
 
-    public abstract void CacheNeighbors();
+    public abstract void CacheNeighbors(Func<Vector2, NodeBase> getTileAtPosition);
 
     public void SetConnection(NodeBase nodeBase)
     {
